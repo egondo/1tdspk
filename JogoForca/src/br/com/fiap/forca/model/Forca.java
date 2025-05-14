@@ -8,8 +8,10 @@ public class Forca {
     private String letrasChutadas;
 
     public Forca() {
-        this.palavra = "Paraguai";
+        this.palavra = "Sri Lanka";
         this.maxErros = 6;
+        this.letrasChutadas = "";
+        this.chuta(' ');
         this.erros = 0;
     }
 
@@ -37,10 +39,24 @@ public class Forca {
     }
 
     public boolean acertou() {
-        //TODO
+        String aux = this.getPalavraFechada();
+        if (aux.indexOf('_') != -1)
+            return false;
+        else
+            return true;
     }
 
     public String getPalavraFechada() {
-        //TODO
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < this.palavra.length(); i++) {
+            char letra = this.palavra.charAt(i);
+            if (this.letrasChutadas.indexOf(letra) == -1)
+                sb.append("_ ");
+            else {
+                sb.append(letra);
+                sb.append(" ");
+            }
+        }
+        return sb.toString();
     }
 }
