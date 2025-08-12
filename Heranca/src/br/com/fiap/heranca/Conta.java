@@ -5,7 +5,7 @@ public class Conta {
     private int agencia;
     private int numero;
     private Pessoa titular;
-    private double saldo;
+    protected double saldo;
 
     public int getAgencia() {
         return agencia;
