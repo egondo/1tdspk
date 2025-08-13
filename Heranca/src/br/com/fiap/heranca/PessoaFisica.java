@@ -30,4 +30,9 @@ public class PessoaFisica extends Pessoa {
     public void setNascimento(LocalDate nascimento) {
         this.nascimento = nascimento;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " " + nascimento + " " + cpf;
+    }
 }
