@@ -38,4 +38,20 @@ public class Conta {
     public void setTitular(Pessoa titular) {
         this.titular = titular;
     }
+
+    public void depositar(double valor) {
+        this.saldo = this.saldo + valor;
+    }
+
+    public void sacar(double valor) {
+        if (this.saldo > valor) {
+            this.saldo = this.saldo - valor;
+        }
+        else {
+            //isso é errado
+            System.out.println("Impossivel sacar, saldo insuficiente!");
+        }
+    }
+
+
 }

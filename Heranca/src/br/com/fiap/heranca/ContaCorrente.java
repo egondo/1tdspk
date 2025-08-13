@@ -4,6 +4,7 @@ public class ContaCorrente extends Conta {
 
     private double limite;
     private int senha;
+    public static double aliquotaCpmf = 0.0038;
 
     public boolean autentica(int numero, int senha) {
         if (numero == this.getNumero() && senha == this.senha) {
@@ -29,5 +30,11 @@ public class ContaCorrente extends Conta {
         }
         else
             return false;
+    }
+
+    @Override
+    public void sacar(double valor) {
+        double cpmf = valor * aliquotaCpmf;
+        super.sacar(valor + cpmf);
     }
 }
