@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba5ece04-db33-4cd9-8979-d5f74c14e542" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/MainTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BaralhoHeranca/src/br/com/fiap/baralho/Baralho2Macos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BaralhoHeranca/src/br/com/fiap/baralho/BaralhoTruco.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BaralhoHeranca/src/br/com/fiap/baralho/app/TesteBaralho.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../excecoes/src/ExemploArquivo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../excecoes/src/LeituraArquivo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BaralhoHeranca/src/br/com/fiap/baralho/Baralho.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BaralhoHeranca/src/br/com/fiap/baralho/Baralho.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +21,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="31Y8aLNx1K3H0097tTKBo7UlpPO" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -29,13 +31,17 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main"
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/eduardogondo/Downloads/1tdspk/bancodados"
   }
 }]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="ba5ece04-db33-4cd9-8979-d5f74c14e542" name="Changes" comment="" />
