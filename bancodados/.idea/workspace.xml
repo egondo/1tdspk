@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba5ece04-db33-4cd9-8979-d5f74c14e542" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../BaralhoHeranca/src/br/com/fiap/baralho/Baralho2Macos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BaralhoHeranca/src/br/com/fiap/baralho/BaralhoTruco.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BaralhoHeranca/src/br/com/fiap/baralho/app/TesteBaralho.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../excecoes/src/ExemploArquivo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../excecoes/src/LeituraArquivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BaralhoHeranca/src/br/com/fiap/baralho/Baralho.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BaralhoHeranca/src/br/com/fiap/baralho/Baralho.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +31,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/eduardogondo/Downloads/1tdspk/bancodados"
+    "last_opened_file_path": "D:/1tdspk/bancodados"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
