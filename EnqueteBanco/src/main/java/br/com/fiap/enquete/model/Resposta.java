@@ -1,5 +1,7 @@
 package br.com.fiap.enquete.model;
 
+import java.time.LocalDateTime;
+
 public class Resposta {
 
     private long id;
@@ -8,7 +10,10 @@ public class Resposta {
 
     private Pergunta pergunta;
 
-    //pode colocar novos atributos aqui
+    private LocalDateTime data;
 
     
+    //pode colocar novos atributos aqui
+
+
 }
