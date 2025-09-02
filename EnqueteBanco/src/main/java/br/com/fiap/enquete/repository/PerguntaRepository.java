@@ -1,6 +1,7 @@
 package br.com.fiap.enquete.repository;
 
 import br.com.fiap.enquete.model.Pergunta;
+import oracle.jdbc.proxy.annotation.Pre;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -15,6 +16,27 @@ public class PerguntaRepository {
     }
 
     public PerguntaRepository() {}
+
+
+    public List<Pergunta> getByTema(String tema) throws SQLException {
+        String sql = "SELECT id, numero, texto, tema FROM pergunta WHERE tema = ? ORDER BY numero";
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        pstmt.setString(1, tema);
+
+        ResultSet rs = pstmt.executeQuery();
+        List<Pergunta> resp = new ArrayList<>();
+        while (rs.next()) {
+            Pergunta p = new Pergunta();
+            p.setId(rs.getLong("id"));
+            p.setNumero(rs.getInt("numero"));
+            p.setTexto(rs.getString(3));
+            p.setTema(rs.getString(4));
+            resp.add(p);
+        }
+        pstmt.close();
+        return resp;
+    }
+
 
 
     public void save(Pergunta pergunta) throws SQLException {
