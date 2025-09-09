@@ -13,7 +13,7 @@ public class PessoaRepository {
     }
 
     public void save(Pessoa pes) throws SQLException {
-        String sql = "INSERT INTO pessoa(nome, telefone, email, nascimento, cpf) VALUES (?, ?, ?, ?, ?) RETURNING id INTO ?";
+        String sql = "INSERT INTO pessoa(nome, telefone, email, nascimento, cpf) VALUES (?, ?, ?, ?, ?)";
 
         PreparedStatement pstmt = con.prepareStatement(sql, new String[]{"id"});
         pstmt.setString(1, pes.getNome());
@@ -26,9 +26,10 @@ public class PessoaRepository {
 
         ResultSet rs = pstmt.getGeneratedKeys();
         if (rs.next()) {
-            pes.setId(rs.getBigDecimal(1).longValue());
+            pes.setId(rs.getLong(1));
         } else {
             throw new SQLException("Erro na hora de pegar a chave primária");
         }
+        pstmt.close();
     }
 }
