@@ -28,3 +28,13 @@ create table funcionario(
     primary key(id),
     foreign key (pessoa_id) references pessoa(id)
 );
+
+
+INSERT INTO PESSOA(NOME, EMAIL, CPF, TELEFONE) VALUES('Geraldo Thomas', 'thomas@fiap.com.br',
+                        '32423', '(11) 8343432');
+
+INSERT INTO PESSOA(NOME, EMAIL, CPF, TELEFONE) VALUES('Fabiana Ferraz', 'ferraz@fiap.com.br',
+                        '32422', '(11) 98423423');
+
+INSERT INTO PESSOA(NOME, EMAIL, CPF, TELEFONE) VALUES('Fernando Lopes', 'lopes@fiap.com.br',
+                        '23432432', '(11) 72343223');
