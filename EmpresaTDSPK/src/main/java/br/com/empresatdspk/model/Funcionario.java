@@ -9,7 +9,7 @@ public class Funcionario {
     private String departamento;
     private String turno;
     private LocalDate admissao;
-    private int salario;
+    private double salario;
     private Pessoa pessoa;
 
     public long getId() {
@@ -52,11 +52,11 @@ public class Funcionario {
         this.admissao = admissao;
     }
 
-    public int getSalario() {
+    public double getSalario() {
         return salario;
     }
 
-    public void setSalario(int salario) {
+    public void setSalario(double salario) {
         this.salario = salario;
     }
 

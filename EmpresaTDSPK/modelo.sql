@@ -47,5 +47,5 @@ insert into funcionario (pessoa_id, cargo, departamento, admissao, salario) valu
 
 insert into funcionario (pessoa_id, cargo, departamento, admissao, salario) values(14, 'Arquiteto', 'IT',
         to_date('2022-07-20', 'YYYY-MM-DD'), 14478);
-                        
+
 
