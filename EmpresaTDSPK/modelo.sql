@@ -38,3 +38,14 @@ INSERT INTO PESSOA(NOME, EMAIL, CPF, TELEFONE) VALUES('Fabiana Ferraz', 'ferraz@
 
 INSERT INTO PESSOA(NOME, EMAIL, CPF, TELEFONE) VALUES('Fernando Lopes', 'lopes@fiap.com.br',
                         '23432432', '(11) 72343223');
+
+insert into funcionario (pessoa_id, cargo, departamento, admissao, salario) values(12, 'Analista', 'IT',
+        to_date('2017-01-20', 'YYYY-MM-DD'), 7800.45);
+
+insert into funcionario (pessoa_id, cargo, departamento, admissao, salario) values(13, 'Professor', 'Ensino',
+        to_date('2019-02-10', 'YYYY-MM-DD'), 2000.45);
+
+insert into funcionario (pessoa_id, cargo, departamento, admissao, salario) values(14, 'Arquiteto', 'IT',
+        to_date('2022-07-20', 'YYYY-MM-DD'), 14478);
+                        
+
