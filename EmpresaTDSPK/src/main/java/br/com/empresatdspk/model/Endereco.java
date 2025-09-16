@@ -2,10 +2,19 @@ package br.com.empresatdspk.model;
 
 public class Endereco {
 
+    private long id;
     private String logradouro;
     private String cep;
     private String numero;
     private String municipio;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getLogradouro() {
         return logradouro;

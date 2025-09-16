@@ -1,6 +1,8 @@
 package br.com.empresatdspk.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Pessoa {
 
@@ -10,7 +12,7 @@ public class Pessoa {
     private String email;
     private LocalDate nascimento;
     private String telefone;
-    private Endereco endereco;
+    private List<Endereco> enderecos = new ArrayList<>();
 
     public long getId() {
         return id;
@@ -60,11 +62,15 @@ public class Pessoa {
         this.telefone = telefone;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
+    public List<Endereco> getEnderecos() {
+        return enderecos;
     }
 
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
+
+    public void addEndereco(Endereco endereco) {
+        enderecos.add(endereco);
     }
 }

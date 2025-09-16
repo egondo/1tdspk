@@ -12,18 +12,32 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         Pessoa p = new Pessoa();
-        p.setCpf("927.261.099-67");
-        p.setEmail("andreia_maria@gmail.com");
+        p.setCpf("928.829.817-99");
+        p.setEmail("tomjobin@gmail.com");
         p.setNascimento(LocalDate.of(2005, 8, 2));
-        p.setTelefone("(11) 72710-9099");
-        p.setNome("Andreia Maria Carvalho");
+        p.setTelefone("(11) 82482-7132");
+        p.setNome("Antonio Calos Jobim");
 
         Endereco end = new Endereco();
         end.setCep("01082-001");
         end.setLogradouro("Av Paulista");
         end.setNumero("1106");
         end.setMunicipio("São Paulo");
-        p.setEndereco(end);
+        p.addEndereco(end);
+
+        end = new Endereco();
+        end.setCep("01283-001");
+        end.setMunicipio("São Paulo");
+        end.setLogradouro("Av Lins de Vasconcelos");
+        end.setNumero("1222");
+        p.addEndereco(end);
+
+        end = new Endereco();
+        end.setCep("01209-000");
+        end.setMunicipio("São Paulo");
+        end.setLogradouro("Av Ipiranga com a São João");
+        end.setNumero("590");
+        p.addEndereco(end);
 
         Connection con = new ConnectionFactory().getConnection();
 
