@@ -9,17 +9,6 @@ public class Reserva {
     private LocalDate checkin;
     private LocalDate checkout;
     private Quarto quarto;
-
-    @Override
-    public String toString() {
-        return "Reserva{" +
-                "hospede=" + hospede.getNome() +
-                ", checkin=" + checkin +
-                ", checkout=" + checkout +
-                ", quarto=" + quarto.getId() +
-                '}';
-    }
-
     private Pessoa hospede;
 
     private Status status = Status.ABERTA;
@@ -78,4 +67,16 @@ public class Reserva {
     public void setStatus(Status status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "Reserva{" +
+                "hospede=" + hospede.getNome() +
+                ", checkin=" + checkin +
+                ", checkout=" + checkout +
+                ", quarto=" + quarto.getId() +
+                '}';
+    }
+
+
 }
