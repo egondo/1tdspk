@@ -17,5 +17,13 @@ public class ReservaRepository {
     }
 
     public void save(Reserva reserva) throws Exception {
+        String sql = "INSERT INTO reserva(checkin, checkou, id_uarto, id_pessoa, status) VALUES(?, ?, ?, ?, ?)";
+        PreparedStatement pstmt = con.preparedStatement(sql);
+        pstmt.set
+
+
+
+
+
     }
 }

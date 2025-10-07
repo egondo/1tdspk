@@ -5,16 +5,17 @@ public class Quarto {
     private long id;
     private int capacidade;
     private int quantidadeCamas;
-    private int numero;
+    private String numero;
 
+    public Quarto(){}
 
-    public Quarto(int capacidade, String id, int quantidadeCamas) {
+    public Quarto(int capacidade, long id, int quantidadeCamas) {
         this.capacidade = capacidade;
         this.id = id;
         this.quantidadeCamas = quantidadeCamas;
     }
 
-    public Quarto(int capacidade, String id, int quantidadeCamas, int numero) {
+    public Quarto(int capacidade, long id, int quantidadeCamas, String numero) {
         this(capacidade, id, quantidadeCamas);
         this.numero = numero;
     }
@@ -42,5 +43,13 @@ public class Quarto {
 
     public void setQuantidadeCamas(int quantidadeCamas) {
         this.quantidadeCamas = quantidadeCamas;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 }
