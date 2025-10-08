@@ -5,9 +5,17 @@ public class Usuario {
     private long id;
     private String nome;
     private String telefone;
+    private int situacao;
 
     public long getId() {
         return id;
+    }
+
+    public boolean isAtivo() {
+        if (situacao == 1)
+            return true;
+        else
+            return false;
     }
 
     public void setId(long id) {
