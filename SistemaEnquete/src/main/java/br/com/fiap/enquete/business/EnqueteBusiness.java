@@ -4,7 +4,12 @@ import br.com.fiap.enquete.model.Enquete;
 import br.com.fiap.enquete.model.Pergunta;
 import br.com.fiap.enquete.model.Resposta;
 import br.com.fiap.enquete.model.Usuario;
+import br.com.fiap.enquete.repository.ConexaoFactory;
+import br.com.fiap.enquete.repository.EnqueteRepository;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class EnqueteBusiness {
@@ -13,6 +18,18 @@ public class EnqueteBusiness {
 
     public void cadastraEnquete(Enquete enquete) throws Exception {
         //RN1: nao posso ter duas enquetes com o mesmo nome
+        //RN4: data de criacao da enquete nao pode ser nula
+        try(Connection con = new ConexaoFactory().getConexao()) {
+            if (enquete.getData() == null) {
+                enquete.setData(LocalDate.now());
+            }
+            EnqueteRepository er = new EnqueteRepository(con);
+            er.save(enquete);
+        }
+        catch (SQLException sql) {
+            sql.printStackTrace();
+            throw new Exception("Deu erro no cadastro da enquete");
+        }
 
     }
 
