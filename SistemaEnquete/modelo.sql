@@ -38,3 +38,4 @@ create table k_resposta(
     foreign key(usuario_id) references k_usuario(id),
     foreign key(pergunta_id) references k_pergunta(id));
 
+alter table k_enquete add constraint nome_unico unique(nome);

@@ -6,6 +6,7 @@ import br.com.fiap.enquete.model.Resposta;
 import br.com.fiap.enquete.model.Usuario;
 import br.com.fiap.enquete.repository.ConexaoFactory;
 import br.com.fiap.enquete.repository.EnqueteRepository;
+import br.com.fiap.enquete.repository.PerguntaRepository;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -36,6 +37,19 @@ public class EnqueteBusiness {
     public void cadastraPergunta(Pergunta pergunta) throws Exception {
         //RN2: nao posso ter duas perguntas em uma mesma enquete com o
         //mesmo enunciado
+        try(Connection con = new ConexaoFactory().getConexao()) {
+            PerguntaRepository pr = new PerguntaRepository(con);
+            Pergunta p = pr.findByEnqueteEnunciado(pergunta.getEnquete(), pergunta.getEnunciado());
+            if (p != null) {
+                throw new Exception("Já existe pergunta com o enunciado!");
+            }
+            else
+                pr.save(pergunta);
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     public void cadastraResposta(Resposta resposta) throws Exception {
