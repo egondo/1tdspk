@@ -20,9 +20,13 @@ public class PerguntaRepository {
         this.con = con;
     }
 
+    public PerguntaRepository() throws SQLException {
+        this.con = new ConexaoFactory().getConexao();
+    }
+
     public void save(Pergunta pergunta) throws SQLException {
         String sqlP = "INSERT INTO k_pergunta(enunciado, numero, tipo, enquete_id) VALUES(?, ?, ?, ?)";
-        PreparedStatement pstmt = con.prepareStatement(sqlP);
+        PreparedStatement pstmt = con.prepareStatement(sqlP, new String[]{"id"});
         pstmt.setString(1, pergunta.getEnunciado());
         pstmt.setInt(2, pergunta.getNumero());
         pstmt.setString(3, pergunta.getTipo().name());
@@ -32,9 +36,10 @@ public class PerguntaRepository {
 
         ResultSet rs = pstmt.getGeneratedKeys();
         long idPergunta = 0;
-        if (rs.next())
+        if (rs.next()) {
+            System.out.println("Nao retornou nada");
             idPergunta = rs.getLong(1);
-
+        }
         System.out.println("ID PERGUNTA " + idPergunta);
 
 

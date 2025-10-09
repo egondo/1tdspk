@@ -7,7 +7,7 @@ public class TesteEnquete {
 
     public static void main(String[] args) {
         Enquete enq = new Enquete();
-        enq.setNome("escola");
+        enq.setNome("lazer");
         enq.setCriador("FIAP");
         try {
             EnqueteBusiness negocio = new EnqueteBusiness();

@@ -13,8 +13,8 @@ public class TestePergunta {
         Enquete enq = new Enquete();
         enq.setId(8);
         Pergunta p = new Pergunta();
-        p.setNumero(1);
-        p.setEnunciado("Qual a sua escolaridade?");
+        p.setNumero(2);
+        p.setEnunciado("Qual a sua escolaridade completa 3?");
         p.setTipo(TipoPergunta.UNICA);
         p.setEnquete(enq);
 
