@@ -7,10 +7,12 @@ import br.com.fiap.enquete.model.Usuario;
 import br.com.fiap.enquete.repository.ConexaoFactory;
 import br.com.fiap.enquete.repository.EnqueteRepository;
 import br.com.fiap.enquete.repository.PerguntaRepository;
+import br.com.fiap.enquete.util.PerguntaTO;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EnqueteBusiness {
@@ -59,8 +61,17 @@ public class EnqueteBusiness {
 
     }
 
-    public List<Pergunta> recuperaPerguntas(Enquete enquete) throws Exception {
-        return null;
+    public List<PerguntaTO> recuperaPerguntas(Enquete enquete) throws Exception {
+        List<PerguntaTO> lista = new ArrayList<>();
+        try(Connection con = new ConexaoFactory().getConexao()) {
+            PerguntaRepository pr = new PerguntaRepository(con);
+            lista = pr.findByEnquete(enquete);
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
+        return lista;
     }
 
     public List<Resposta> recuperaRespostas(Enquete enquete) throws Exception {

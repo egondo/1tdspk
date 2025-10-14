@@ -1,14 +1,13 @@
 package br.com.fiap.enquete.repository;
 
-import br.com.fiap.enquete.model.Enquete;
-import br.com.fiap.enquete.model.Item;
-import br.com.fiap.enquete.model.Pergunta;
-import br.com.fiap.enquete.model.TipoPergunta;
+import br.com.fiap.enquete.model.*;
+import br.com.fiap.enquete.util.PerguntaTO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -56,8 +55,30 @@ public class PerguntaRepository {
         pstmt.close();
     }
 
-    public List<Pergunta> findByEnquete(Enquete enquete) throws SQLException {
-        return null;
+    private PerguntaTO parsePerguntaTO(ResultSet rs) throws SQLException {
+        PerguntaTO obj = new PerguntaTO();
+        obj.setId(rs.getLong("id"));
+        obj.setEnunciado(rs.getString("enunciado"));
+        obj.setTipo(TipoPergunta.valueOf(rs.getString("tipo")));
+        obj.setNumero(rs.getInt("numero"));
+        obj.setIdItem(rs.getLong("item_id"));
+        obj.setDescricaoItem(rs.getString("descricao"));
+        return obj;
+    }
+
+    public List<PerguntaTO> findByEnquete(Enquete enquete) throws SQLException {
+
+        String sql = "select p.id, p.enunciado, p.numero, p.tipo, i.id as item_id, i.descricao from k_pergunta p left join k_item i on p.id = i.pergunta_id where p.enquete_id = ? order by p.numero, i.id";
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        pstmt.setLong(1, enquete.getId());
+
+        ResultSet rs = pstmt.executeQuery();
+        List<PerguntaTO> resp = new ArrayList<>();
+        while (rs.next()) {
+            resp.add(parsePerguntaTO(rs));
+        }
+        pstmt.close();
+        return resp;
     }
 
 
