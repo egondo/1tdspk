@@ -11,6 +11,7 @@ import jakarta.ws.rs.core.Response;
 public class CampeonatoResource {
 
 
+    @Path("/time")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getTime() {
