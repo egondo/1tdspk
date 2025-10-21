@@ -1,8 +1,5 @@
 package br.com.fiap.model;
 
-import io.quarkus.runtime.annotations.RegisterForReflection;
-
-@RegisterForReflection
 public class Mensagem {
 
     private String assunto;
@@ -10,6 +7,15 @@ public class Mensagem {
     private String tipo;
     private String destinatario;
 
+    @Override
+    public String toString() {
+        return "Mensagem{" +
+                "assunto='" + assunto + '\'' +
+                ", mensagem='" + mensagem + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", destinatario='" + destinatario + '\'' +
+                '}';
+    }
 
     public Mensagem(String assunto, String mensagem, String tipo, String destinatario) {
         this.assunto = assunto;

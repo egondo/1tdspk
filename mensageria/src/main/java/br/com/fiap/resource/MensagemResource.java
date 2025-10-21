@@ -1,9 +1,10 @@
 package br.com.fiap.resource;
 
+import br.com.fiap.enquete.business.EnqueteBusiness;
+import br.com.fiap.enquete.model.Enquete;
+import br.com.fiap.enquete.util.PerguntaTO;
 import br.com.fiap.model.Mensagem;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
@@ -25,5 +26,12 @@ public class MensagemResource {
         return Response.ok(lista).build();
     }
 
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response addMensagem(Mensagem msg) {
+        System.out.println("Instanciando objeto de negócio e gravando a msg no banco");
+        System.out.println(msg);
 
+        return Response.status(201).entity(msg).build();
+    }
 }
