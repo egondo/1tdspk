@@ -59,14 +59,13 @@
       };
 
       // Substitua essa URL pela URL real da API
-      const apiUrl = 'http://127.0.0.1:8080/enquetes/perguntas';
+      const apiUrl = 'http://127.0.0.1:8080/enquetes/perguntas/8';
 
       fetch(apiUrl, {
         method: 'POST',
 
         headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'http://127.0.0.1:8080/enquetes/perguntas'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(dados)
       })
