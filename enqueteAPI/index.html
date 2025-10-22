@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário com API</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, button {
+      margin-top: 5px;
+      padding: 8px;
+      width: 300px;
+    }
+    #resultado {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Formulário</h1>
+
+  <form id="meuFormulario">
+    <label for="enunciado">Enunciado:</label>
+    <input type="text" id="enunciado" name="enunciado" required>
+
+    <label for="numero">Número:</label>
+    <input type="number" id="numero" name="numero" required>
+
+    <label for="tipo">Tipo:</label>
+    <select id="tipo" name="tipo" required>
+      <option value="">Selecione</option>
+      <option value="ABERTA">aberta</option>
+      <option value="MULTIPLA">múltipla</option>
+      <option value="UNICA">única</option>
+    </select>
+
+    <button type="button" onclick="enviarFormulario()">Enviar</button>
+  </form>
+
+  <div id="resultado"></div>
+
+  <script>
+    function enviarFormulario() {
+      const enunciado = document.getElementById('enunciado').value;
+      const numero = document.getElementById('numero').value;
+      const tipo = document.getElementById('tipo').value;
+
+      const dados = {
+        enunciado: enunciado,
+        numero: parseInt(numero),
+        tipo: tipo
+      };
+
+      // Substitua essa URL pela URL real da API
+      const apiUrl = 'http://127.0.0.1:8080/enquetes/perguntas';
+
+      fetch(apiUrl, {
+        method: 'POST',
+
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'http://127.0.0.1:8080/enquetes/perguntas'
+        },
+        body: JSON.stringify(dados)
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('resultado').innerText = 'Resposta da API: ' + JSON.stringify(data);
+      })
+      .catch(error => {
+        document.getElementById('resultado').innerText = 'Erro: ' + error;
+      });
+    }
+  </script>
+
+</body>
+</html>
