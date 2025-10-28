@@ -1,8 +1,5 @@
 package br.com.fiap.resource;
 
-import br.com.fiap.enquete.business.EnqueteBusiness;
-import br.com.fiap.enquete.model.Enquete;
-import br.com.fiap.enquete.util.PerguntaTO;
 import br.com.fiap.model.Mensagem;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
